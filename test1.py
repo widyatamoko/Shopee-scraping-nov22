@@ -12,7 +12,7 @@ import pandas as pd
 import re
 
 cari= input("keyword pencarian:")
-hal= input("berpa halaman:")
+hal= input("berapa halaman:")
 nama_file= input("nama file(sertakan.csv):")
 
 #webdriver option
@@ -73,11 +73,11 @@ for product in all_product:
     price_text = price_element.text
 
     #gunakan if-else jika terdapat data yang kosong
-    pricedc_element = product.find('span',{'class':'ZEgDH9'})
-    if pricedc_element is None:
-        pricedc_text = None
-    else:
-        pricedc_text = pricedc_element.text
+    # pricedc_element = product.find('span',{'class':'ZEgDH9'})
+    # if pricedc_element is None:
+    #     pricedc_text = None
+    # else:
+    #     pricedc_text = pricedc_element.text
     
     terjual_element = product.find('div',{'class':'r6HknA uEPGHT'})
     if terjual_element is None:
@@ -92,7 +92,7 @@ for product in all_product:
     data_dict = dict()
     data_dict['title'] = title_text
     data_dict['price'] = price_text
-    data_dict['pricedc'] = pricedc_text
+    # data_dict['pricedc'] = pricedc_text
     data_dict['terjual'] = terjual_text
     data_dict['link'] = product_link
     data_dict_list.append(data_dict)
